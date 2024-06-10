@@ -21,7 +21,7 @@ export default new Vuex.Store({
   actions: {
     fetchWeather({ commit, state }) {
       if (state.city) {
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${state.city}&appid=12f3d4957357da3982fa4139e043fb83`)
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${state.city}&units=metric&appid=12f3d4957357da3982fa4139e043fb83`)
           .then(response => {
             commit('setWeather', response.data);
           })
